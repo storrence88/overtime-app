@@ -4,14 +4,17 @@ describe 'navigate' do
   before do
     user = User.create(email: 'admin@test.com', password: 'asdfasdf', password_confirmation: 'asdfasdf', first_name: 'Steve', last_name: 'Torrence')
     login_as(user, :scope => :user)
+  end
+
   describe 'index' do
-    it 'can be reached successfully' do
+    before do
       visit posts_path
+    end
+    it 'can be reached successfully' do
       expect(page.status_code).to eq(200)
     end
 
     it 'has a title of Posts' do
-      visit posts_path
       expect(page).to have_content(/Posts/)
     end
 
@@ -24,6 +27,7 @@ describe 'navigate' do
   end
 
   describe 'creation' do
+    before do
       visit new_post_path
     end
 
