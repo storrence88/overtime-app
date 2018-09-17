@@ -35,6 +35,16 @@ describe 'navigate' do
     end
   end
 
+  describe 'delete' do
+    xit 'can be deleted' do
+      visit posts_path
+      @post = FactoryBot.create(:post)
+
+      click_link("delete_post_#{@post.id}_from_index")
+      expect(page.status_code).to eq(200)
+    end
+  end
+
   describe 'creation' do
     before do
       visit new_post_path
