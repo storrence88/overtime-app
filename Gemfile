@@ -29,6 +29,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'gritter', '~> 1.2'
 gem 'administrate', '~> 0.11.0'
 gem 'bourbon', '~> 4.2', '>= 4.2.7'
+gem 'pundit', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
